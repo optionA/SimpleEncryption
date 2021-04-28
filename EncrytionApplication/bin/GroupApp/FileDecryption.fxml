@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupApp.DecryptController">
+   <children>
+      <Label layoutX="6.0" layoutY="8.0" prefHeight="61.0" prefWidth="471.0" text="File Decryption" wrapText="true">
+         <font>
+            <Font name="Arial Italic" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="81.0" fitWidth="91.0" layoutX="512.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/Icons/FileLock.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="fileName" layoutX="6.0" layoutY="130.0" prefHeight="27.0" prefWidth="187.0" text="(Displays selected File)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="selectFile" layoutX="6.0" layoutY="89.0" mnemonicParsing="false" onAction="#openFileChooser" prefHeight="27.0" prefWidth="272.0" text="Select File">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="burnCheck" layoutX="6.0" layoutY="169.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="174.0" text="Burn Encrypted File?" />
+      <CheckBox fx:id="renameCheck" layoutX="6.0" layoutY="198.0" mnemonicParsing="false" onAction="#renameToggle" prefHeight="27.0" prefWidth="174.0" text="Rename File?" />
+      <TextField fx:id="newFileName" disable="true" layoutX="6.0" layoutY="253.0" opacity="0.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label fx:id="enterFilePrompt" disable="true" layoutX="6.0" layoutY="229.0" opacity="0.0" prefHeight="27.0" prefWidth="187.0" text="Enter New File Name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="decryptFile" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" onAction="#decryptFile" prefHeight="27.0" prefWidth="272.0" text="Decrypt File">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="goToHome" layoutX="481.0" layoutY="333.0" mnemonicParsing="false" onAction="#goHome" prefHeight="105.0" prefWidth="105.0">
+         <graphic>
+            <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/Icons/Home.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="currentKey1" layoutX="304.0" layoutY="86.0" prefHeight="39.0" prefWidth="272.0" text="Current Encryption Key:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentKey" layoutX="304.0" layoutY="118.0" prefHeight="39.0" prefWidth="272.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="324.0" layoutY="171.0" prefHeight="17.0" prefWidth="259.0" text="Encryption Key and Decryption Key must match!" />
+   </children>
+</AnchorPane>
