@@ -7,4 +7,4 @@ Includes 4 Windows (HomeMenu, Encryption, Decryption, and KeyChage) all of which
 
 Still missing custom error messages for mismatched keys and unreachable or missing files.
 
-may require Java Cryptography Extension (JCE)
+requires Java Cryptography Extension (JCE)
