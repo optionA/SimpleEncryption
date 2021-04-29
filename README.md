@@ -8,4 +8,4 @@ Simple text file encryption and decryption application.
 
 Uses Jre 1.8 and JavaFX 8
 
-Requires Java Cryptography Extension (JCE)
+Requires properly installed Java Cryptography Extension (JCE)
