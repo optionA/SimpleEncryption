@@ -21,10 +21,10 @@ public class HomeController {
 
 
 @FXML
-void toChange(ActionEvent event) { //Go to change Window
+void toChange(ActionEvent event) { // go to change key window on goToChangeKey press
 	try {
 		((Stage)(((Button)event.getSource()).getScene().getWindow())).close(); // close old window
-		AnchorPane root1 = (AnchorPane)FXMLLoader.load(getClass().getResource("/GroupApp/ChangeEncryption.fxml")); 
+		AnchorPane root1 = (AnchorPane)FXMLLoader.load(getClass().getResource("/GroupApp/ChangeEncryption.fxml")); // Load ChangeEncryption.fxml and open ChangeKey window
 		Stage stage = new Stage();
 		Scene scene2 = new Scene(root1,600,450);
 		stage.setScene(scene2);
@@ -35,10 +35,10 @@ void toChange(ActionEvent event) { //Go to change Window
 	}
 }
 @FXML
-void toText(ActionEvent event) {  //Go to Text Window
+void toText(ActionEvent event) {  // go to encrypt window on goToEncrypt press
 	try {
 		((Stage)(((Button)event.getSource()).getScene().getWindow())).close(); // close old window
-		AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/GroupApp/TextEncryption.fxml")); 
+		AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/GroupApp/TextEncryption.fxml")); //Load TextEncryption.fxml open Encryption window
 		Stage stage = new Stage();
 		Scene scene2 = new Scene(root,600,450);
 		stage.setScene(scene2);
@@ -49,10 +49,10 @@ void toText(ActionEvent event) {  //Go to Text Window
 	}
 }
 @FXML
-void toDecrypt(ActionEvent event) { //Go to Decryption Window
+void toDecrypt(ActionEvent event) { /// go to Decryption window on goToDecrypt button press
 	try {
 		((Stage)(((Button)event.getSource()).getScene().getWindow())).close(); // close old window
-		AnchorPane root1 = (AnchorPane)FXMLLoader.load(getClass().getResource("/GroupApp/FileDecryption.fxml")); 
+		AnchorPane root1 = (AnchorPane)FXMLLoader.load(getClass().getResource("/GroupApp/FileDecryption.fxml")); //Load FileDecryption.fxml open Decryption window
 		Stage stage = new Stage();
 		Scene scene2 = new Scene(root1,600,450);
 		stage.setScene(scene2);
@@ -62,6 +62,4 @@ void toDecrypt(ActionEvent event) { //Go to Decryption Window
 		e.printStackTrace();
 	}
 }
-
-
 }

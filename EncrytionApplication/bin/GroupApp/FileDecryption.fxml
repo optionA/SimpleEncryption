@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: black; -fx-background-image: url(&quot;Icons/space3.jpeg&quot;); -fx-background-size: 100% 100%;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupApp.DecryptController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: black; -fx-background-image: url(&quot;Icons/space3.jpeg&quot;); -fx-background-size: 100% 100%;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupApp.DecryptController">
    <children>
       <Label layoutX="6.0" layoutY="8.0" prefHeight="61.0" prefWidth="471.0" text="File Decryption" textFill="WHITE" wrapText="true">
          <font>
@@ -21,46 +26,65 @@
             <Image url="@/Icons/FileLock.png" />
          </image>
       </ImageView>
-      <Label fx:id="fileName" layoutX="6.0" layoutY="130.0" prefHeight="27.0" prefWidth="213.0" text="(Displays selected File)" textFill="WHITE">
+      <Label fx:id="fileName" layoutX="14.0" layoutY="130.0" prefHeight="27.0" prefWidth="213.0" textFill="WHITE">
+         <font>
+            <Font name="Verdana Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="selectFile" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" onAction="#openFileChooser" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: white; -fx-background-color: transparent;" text="Select File" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="burnCheck" layoutX="14.0" layoutY="169.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="174.0" text="Burn Encrypted File?" textFill="WHITE" />
+      <CheckBox fx:id="renameCheck" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onAction="#renameToggle" prefHeight="27.0" prefWidth="174.0" text="Rename File?" textFill="WHITE" />
+      <TextField fx:id="newFileName" disable="true" layoutX="14.0" layoutY="267.0" opacity="0.0" prefHeight="27.0" prefWidth="241.0">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font></TextField>
+      <Label fx:id="enterFilePrompt" disable="true" layoutX="14.0" layoutY="234.0" opacity="0.0" prefHeight="27.0" prefWidth="187.0" text="Enter New File Name:" textFill="WHITE">
          <font>
             <Font name="Verdana" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="selectFile" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" onAction="#openFileChooser" prefHeight="37.0" prefWidth="117.0" style="-fx-border-color: white; -fx-background-color: transparent;" text="Select File" textFill="WHITE">
+      <Button fx:id="decryptFile" layoutX="168.0" layoutY="305.0" mnemonicParsing="false" onAction="#decryptFile" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: white; -fx-background-color: transparent;" text="Decrypt File" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <CheckBox fx:id="burnCheck" layoutX="6.0" layoutY="169.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="174.0" text="Burn Encrypted File?" textFill="WHITE" />
-      <CheckBox fx:id="renameCheck" layoutX="6.0" layoutY="198.0" mnemonicParsing="false" onAction="#renameToggle" prefHeight="27.0" prefWidth="174.0" text="Rename File?" textFill="WHITE" />
-      <TextField fx:id="newFileName" disable="true" layoutX="14.0" layoutY="267.0" opacity="0.0" prefHeight="27.0" prefWidth="241.0" />
-      <Label fx:id="enterFilePrompt" disable="true" layoutX="19.0" layoutY="234.0" opacity="0.0" prefHeight="27.0" prefWidth="187.0" text="Enter New File Name:" textFill="WHITE">
+      <Button fx:id="goToHome" layoutX="438.0" layoutY="355.0" mnemonicParsing="false" onAction="#goHome" prefHeight="41.0" prefWidth="148.0" style="-fx-background-color: transparent; -fx-border-color: white;" text="Back to Home &gt;" textFill="WHITE">
          <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="decryptFile" layoutX="135.0" layoutY="305.0" mnemonicParsing="false" onAction="#decryptFile" prefHeight="37.0" prefWidth="117.0" style="-fx-border-color: white; -fx-background-color: transparent;" text="Decrypt File" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="goToHome" layoutX="438.0" layoutY="375.0" mnemonicParsing="false" onAction="#goHome" prefHeight="61.0" prefWidth="148.0" style="-fx-background-color: transparent;" text="Back to Home" textFill="WHITE">
-         <font>
-            <Font name="Verdana Italic" size="13.0" />
+            <Font name="Verdana Italic" size="14.0" />
          </font></Button>
-      <Label fx:id="currentKey1" layoutX="262.0" layoutY="88.0" prefHeight="39.0" prefWidth="199.0" text="Current Encryption Key:" textFill="WHITE">
+      <Label fx:id="currentKeyMessage" disable="true" layoutX="285.0" layoutY="234.0" opacity="0.0" prefHeight="39.0" prefWidth="199.0" text="Current Encryption Key:" textFill="WHITE">
          <font>
             <Font name="Verdana" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="currentKey" layoutX="304.0" layoutY="118.0" prefHeight="39.0" prefWidth="272.0" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="262.0" layoutY="171.0" prefHeight="17.0" prefWidth="321.0" text="Encryption Key and Decryption Key must match!" textFill="WHITE">
+      <Label fx:id="currentKey" disable="true" layoutX="285.0" layoutY="270.0" opacity="0.0" prefHeight="27.0" prefWidth="241.0" textFill="WHITE">
          <font>
             <Font name="Verdana" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="keyInfo" disable="true" layoutX="285.0" layoutY="226.0" opacity="0.0" prefHeight="17.0" prefWidth="295.0" text="*Encryption Key and Decryption Key must match*" textFill="WHITE">
+         <font>
+            <Font name="Verdana Italic" size="11.0" />
          </font></Label>
+      <Button fx:id="goToChangeKey" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#goToChange" prefHeight="41.0" prefWidth="148.0" style="-fx-background-color: transparent; -fx-border-color: white;" text="Change Key &gt;" textFill="WHITE">
+         <font>
+            <Font name="Verdana Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="goToEncrypt" layoutX="168.0" layoutY="355.0" mnemonicParsing="false" onAction="#goToFileEncrypt" prefHeight="41.0" prefWidth="148.0" style="-fx-background-color: transparent; -fx-border-color: white;" text="Go To Encrypt &gt;" textFill="WHITE">
+         <font>
+            <Font name="Verdana Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorLabel" layoutX="14.0" layoutY="105.0" prefHeight="18.0" prefWidth="500.0" textFill="#ff4848">
+         <font>
+            <Font name="Verdana Italic" size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="showKeyCheck" layoutX="285.0" layoutY="198.0" mnemonicParsing="false" onAction="#showKeyToggle" prefHeight="27.0" prefWidth="174.0" text="Show Current Key?" textFill="WHITE" />
    </children>
 </AnchorPane>
