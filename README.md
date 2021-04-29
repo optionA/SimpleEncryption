@@ -1,4 +1,4 @@
-# EncrytionApplication
+# Simple Encryption
 
 Application Programming Group 8
 
