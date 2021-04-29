@@ -1,10 +1,9 @@
 # EncrytionApplication
-Apps Group 8 Project: EncrytionApplication
 
-Its not exactly pretty but at least it works.
+Application Programming Group 8
 
-Currently 4 Windows (HomeMenu, Encryption, Decryption, and KeyChage) all of which are very limited, but have some additional silly UI elements added as a proof of concept.
+Team Members: Aden Sawyer, Jaden Dapilmoto, Minh Le, Mason Paradeza
 
-Still missing custom error messages for mismatched keys and unreachable or missing files.
+Simple text file encryption and decryption application.
 
 requires Java Cryptography Extension (JCE)
