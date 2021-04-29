@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupApp.ChangeEncryptController">
+<AnchorPane opacity="0.9" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: black; -fx-background-image: url(&quot;Icons/space2.jpeg&quot;); -fx-background-size: 100% 100%;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupApp.ChangeEncryptController">
    <children>
-      <Label layoutX="6.0" layoutY="8.0" prefHeight="61.0" prefWidth="471.0" text="Change Encryption key" wrapText="true">
+      <Label layoutX="6.0" layoutY="8.0" prefHeight="61.0" prefWidth="471.0" text="Change Encryption key" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Arial Italic" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="currentKey" layoutX="16.0" layoutY="101.0" prefHeight="39.0" prefWidth="272.0">
+      <Label fx:id="currentKey" layoutX="16.0" layoutY="108.0" prefHeight="39.0" prefWidth="272.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="EnterNewKey" layoutX="17.0" layoutY="218.0" prefHeight="25.0" prefWidth="272.0" />
-      <Label layoutX="18.0" layoutY="170.0" prefHeight="27.0" prefWidth="222.0" text="Enter New Encyption Key:">
+      <TextField fx:id="EnterNewKey" layoutX="16.0" layoutY="218.0" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: grey;" />
+      <Label layoutX="16.0" layoutY="157.0" prefHeight="27.0" prefWidth="222.0" text="Enter New Encyption Key:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -31,28 +32,24 @@
          </image>
       </ImageView>
       <ImageView fx:id="imagePreview" fitHeight="260.0" fitWidth="260.0" layoutX="300.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="goToHome" layoutX="505.0" layoutY="355.0" mnemonicParsing="false" onAction="#goHome" prefHeight="81.0" prefWidth="81.0">
-         <graphic>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@/Icons/Home.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="changeKey" layoutX="16.0" layoutY="247.0" mnemonicParsing="false" onAction="#changeKey" prefHeight="27.0" prefWidth="272.0" text="Change Encryption Key">
+      <Button fx:id="goToHome" layoutX="474.0" layoutY="355.0" mnemonicParsing="false" onAction="#goHome" prefHeight="81.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="Back to Home" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Verdana Italic" size="14.0" />
          </font>
       </Button>
-      <Label fx:id="currentKey1" layoutX="16.0" layoutY="69.0" prefHeight="39.0" prefWidth="272.0" text="Current Encryption Key:">
+      <Button fx:id="changeKey" layoutX="18.0" layoutY="254.0" mnemonicParsing="false" onAction="#changeKey" prefHeight="37.0" prefWidth="187.0" style="-fx-background-color: transparent; -fx-border-color: white;" text="Change Encryption Key" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="currentKey1" layoutX="16.0" layoutY="69.0" prefHeight="39.0" prefWidth="272.0" text="Current Encryption Key:" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="errorText" layoutX="18.0" layoutY="189.0" prefHeight="27.0" prefWidth="272.0">
+      <Label fx:id="errorText" layoutX="16.0" layoutY="184.0" prefHeight="27.0" prefWidth="272.0" textFill="#a1a1a1">
          <font>
-            <Font size="18.0" />
+            <Font name="Verdana" size="14.0" />
          </font>
       </Label>
    </children>
